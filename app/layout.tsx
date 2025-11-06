@@ -49,6 +49,63 @@ export default function RootLayout({
           data-close-text="\u9589\u3058\u308b"
           data-language="ja"
         />
+        <Script id="readdy-widget-localizer" strategy="afterInteractive">
+          {`
+            (function () {
+              const TEXT_MAP = new Map([
+                ["talk with us", "お問い合わせ"],
+                ["choose voice or text", "音声またはテキストをお選びください"],
+                ["use voice or text to communicate", "音声またはテキストでご相談いただけます"],
+                ["type your message...", "メッセージを入力してください"],
+                ["type your message…", "メッセージを入力してください"],
+                ["send", "送信"],
+                ["minimize", "最小化"],
+                ["close", "閉じる"]
+              ]);
+
+              const replaceTexts = () => {
+                const walker = document.createTreeWalker(
+                  document.body,
+                  NodeFilter.SHOW_TEXT
+                );
+                const updates = [];
+
+                while (true) {
+                  const node = walker.nextNode();
+                  if (!node) break;
+                  const original = node.textContent;
+                  const trimmed = original.trim();
+                  if (!trimmed) continue;
+                  const key = trimmed.toLowerCase();
+                  const replacement = TEXT_MAP.get(key);
+                  if (replacement && replacement !== trimmed) {
+                    const leading = original.slice(0, original.indexOf(trimmed));
+                    const trailing = original.slice(original.indexOf(trimmed) + trimmed.length);
+                    updates.push({ node, value: `${leading}${replacement}${trailing}` });
+                  }
+                }
+
+                updates.forEach(({ node, value }) => {
+                  node.textContent = value;
+                });
+              };
+
+              if (!document.body) return;
+
+              const observer = new MutationObserver((mutations) => {
+                for (const mutation of mutations) {
+                  if (mutation.addedNodes.length) {
+                    replaceTexts();
+                    break;
+                  }
+                }
+              });
+
+              observer.observe(document.body, { childList: true, subtree: true });
+              replaceTexts();
+            })();
+          `}
+        </Script>
       </body>
     </html>
   );
