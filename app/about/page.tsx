@@ -61,7 +61,7 @@ export default function About() {
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">院長プロフィール</h2>
           
           <div className="bg-white rounded-lg shadow-sm p-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">経歴</h3>
                 <div className="space-y-3 text-sm text-gray-700">
