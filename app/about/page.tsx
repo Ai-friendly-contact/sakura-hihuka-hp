@@ -1,8 +1,6 @@
 
 'use client';
 
-import Footer from '../../components/Footer';
-
 export default function About() {
   return (
     <div className="min-h-screen bg-white">
@@ -217,7 +215,6 @@ export default function About() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

@@ -1,8 +1,6 @@
 
 'use client';
 
-import Footer from '../../components/Footer';
-
 export default function Diseases() {
   return (
     <div className="min-h-screen bg-white">
@@ -205,7 +203,6 @@ export default function Diseases() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

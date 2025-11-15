@@ -1,7 +1,5 @@
 
 'use client';
-
-import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function AccessPage() {
@@ -230,7 +228,6 @@ export default function AccessPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }
