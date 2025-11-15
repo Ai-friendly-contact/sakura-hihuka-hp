@@ -6,7 +6,7 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroImages = [
-    'https://readdy.ai/api/search-image?query=Modern%20dermatology%20clinic%20exterior%20with%20clean%20white%20facade%2C%20glass%20windows%2C%20professional%20medical%20building%2C%20cherry%20blossom%20trees%20nearby%2C%20peaceful%20Japanese%20medical%20facility%2C%20bright%20daylight%2C%20professional%20photography%20style%2C%20clean%20simple%20background%20suitable%20for%20text%20overlay&width=1400&height=600&seq=clinic-hero-1&orientation=landscape',
+    '/hero-1.jpg',
     'https://readdy.ai/api/search-image?query=Clean%20modern%20medical%20clinic%20interior%20with%20comfortable%20waiting%20area%2C%20soft%20lighting%2C%20white%20and%20blue%20color%20scheme%2C%20professional%20dermatology%20office%2C%20peaceful%20atmosphere%2C%20Japanese%20medical%20facility%20interior%20design&width=1400&height=600&seq=clinic-hero-2&orientation=landscape',
     'https://readdy.ai/api/search-image?query=Professional%20dermatologist%20examining%20patient%20skin%20with%20modern%20medical%20equipment%2C%20clean%20medical%20environment%2C%20caring%20healthcare%20professional%2C%20Japanese%20medical%20clinic%20setting%2C%20soft%20professional%20lighting&width=1400&height=600&seq=clinic-hero-3&orientation=landscape'
   ];
